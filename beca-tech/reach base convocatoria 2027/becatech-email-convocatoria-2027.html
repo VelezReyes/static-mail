@@ -1,0 +1,353 @@
+<!--
+  BECATECH+ 2027 · EMAIL DE CONVOCATORIA (Mailchimp — "Code your own")
+  ============================================================
+  v3 — ajustes de esta ronda:
+    - Logo: ahora usa directamente "becatech-logo-negativo.png" del
+      repo (ya no el PNG que yo había exportado — ese ya no hace
+      falta, lo puedes borrar de donde lo hayas guardado).
+    - "Una oportunidad puede abrirte..." ahora tiene la misma jerarquía
+      (tamaño/peso/color, sin cursiva) que "Si aún no has iniciado...".
+    - "Hola *|FNAME|*," más grande.
+    - Footer: quité *|LIST:ADDRESS|* y el link de "Darte de baja" y
+      puse el logo de VélezReyes+ en su lugar.
+      OJO — esto es una nota de cumplimiento, no solo de diseño: la
+      mayoría de leyes anti-spam (y las políticas de Mailchimp) exigen
+      que TODO correo masivo tenga un link de baja funcional y, en
+      varios países, los datos de contacto del remitente. Si tu cuenta
+      de Mailchimp tiene activado su footer/pie de página por defecto
+      (Campaign Defaults → "Permission Reminder" / footer automático),
+      probablemente ya cubre esto y no pasa nada. Si NO lo tienes
+      activado y envías con este footer tal cual, corres riesgo de que
+      Mailchimp rechace el envío o que el correo no cumpla la
+      normativa. Vale la pena que lo confirmes con quien maneje esa
+      cuenta antes de salir a producción.
+    - Fondo: pasé de un gris-tinta oscuro (#181815) a negro puro
+      (#000000), y agregué una tercera mancha sutil en morado (el
+      tercer acento de marca) además de la amarilla y la verde.
+  Se mantiene todo lo demás de la v2 (título de dos líneas con el logo
+  incrustado, "2027" con efecto outline progresivo, tarjeta de
+  requisitos, botón CTA en mayúsculas) — sigue siendo tablas + estilos
+  en línea por debajo, sin JS ni animaciones.
+  ============================================================
+  CÓMO USARLO
+  1) Sube este .html a Mailchimp: Campaigns → Design Email → "Code your
+     own" → pega el código (o impórtalo directo).
+  2) Imágenes: las tres (foto de equipo, logo BecaTech+, logo
+     VélezReyes+) ya apuntan a archivos que confirmaste que están en
+     el repo — no necesitas subir nada más de mi parte.
+  3) Botón: usa el link que me pasaste, "becas-tech" en plural — sigue
+     pendiente que confirmes si esa es la ruta correcta o si es
+     "beca-tech" (singular), como en el resto del sitio.
+  4) *|FNAME|* es merge tag de Mailchimp, no lo borres. Revisa la nota
+     de cumplimiento de arriba antes de enviar sin *|UNSUB|*.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>BecaTech+ 2027</title>
+<!--[if mso]>
+<noscript>
+<xml>
+<o:OfficeDocumentSettings>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+</noscript>
+<![endif]-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  @font-face{
+    font-family:'BT4BookmanJFPro';
+    src:url('https://cdn.jsdelivr.net/gh/VelezReyes/notion-content@main/BookmanJFPro-Regular.woff2') format('woff2');
+    font-weight:400 800;
+    font-style:normal;
+    font-display:swap;
+  }
+  body, table, td, a{ -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+  table, td{ mso-table-lspace:0pt; mso-table-rspace:0pt; }
+  img{ -ms-interpolation-mode:bicubic; border:0; outline:none; text-decoration:none; }
+  body{ margin:0; padding:0; width:100% !important; height:100% !important; background:#000000; }
+  .bt-mail-preheader{ display:none !important; visibility:hidden; mso-hide:all; font-size:1px; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden; }
+
+  .bt-mail-card{
+    background-color:#000000;
+    background-image:
+      radial-gradient(circle at 88% -6%, rgba(243,255,0,.17) 0%, rgba(243,255,0,0) 40%),
+      radial-gradient(circle at -10% 28%, rgba(39,207,119,.15) 0%, rgba(39,207,119,0) 42%),
+      radial-gradient(circle at 96% 62%, rgba(166,43,255,.16) 0%, rgba(166,43,255,0) 38%);
+    background-repeat:no-repeat;
+  }
+
+  .bt-mail-pill{
+    display:inline-block;
+    font-family:'Instrument Sans',Arial,sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#efefe4;
+    background:rgba(239,239,228,.08);
+    border:1px solid rgba(239,239,228,.22);
+    padding:9px 16px 9px 12px;
+    border-radius:999px;
+  }
+  .bt-mail-pill-dot{
+    display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:#f3ff00;margin-right:8px;
+  }
+
+  .bt-mail-h1{
+    font-family:'BT4BookmanJFPro',Georgia,'Times New Roman',serif;
+    font-weight:800;
+    color:#efefe4;
+    font-size:30px;
+    line-height:1.14;
+    letter-spacing:.1px;
+  }
+  .bt-mail-h1-outline{ color:#f3ff00; }
+  @supports (-webkit-text-stroke: 1px #000){
+    .bt-mail-h1-outline{ color:transparent !important; -webkit-text-stroke:1.6px #f3ff00; }
+  }
+  .bt-mail-h1-logo{ vertical-align:middle; margin:0 2px -3px 2px; }
+  .bt-mail-mast-logo{ vertical-align:middle; }
+
+  .bt-mail-kicker{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:400;
+    color:rgba(239,239,228,.92);
+    font-size:15.5px;
+    line-height:1.62;
+  }
+  .bt-mail-eyebrow{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#27cf77;
+  }
+  .bt-mail-h2{
+    font-family:'BT4BookmanJFPro',Georgia,'Times New Roman',serif;
+    font-weight:800;
+    color:#efefe4;
+    font-size:21px;
+    line-height:1.25;
+  }
+  .bt-mail-body{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:400;
+    color:rgba(239,239,228,.92);
+    font-size:15.5px;
+    line-height:1.62;
+  }
+  .bt-mail-greet{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:700;
+    color:#efefe4;
+    font-size:21px;
+    line-height:1.3;
+  }
+
+  .bt-mail-req-card{
+    background:#0d0d0a;
+    border:1px solid rgba(239,239,228,.10);
+    border-radius:16px;
+    overflow:hidden;
+  }
+  .bt-mail-req-cell{
+    padding:15px 20px;
+    border-bottom:1px dotted rgba(239,239,228,.26);
+  }
+  .bt-mail-check{
+    display:inline-block;width:22px;height:22px;line-height:22px;
+    border-radius:50%;background:rgba(39,207,119,.18);color:#27cf77;
+    font-family:Arial,sans-serif;font-weight:800;font-size:12px;text-align:center;
+  }
+  .bt-mail-req-text{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:500;color:#efefe4;font-size:15px;line-height:1.5;
+    padding-left:12px;
+  }
+
+  .bt-mail-btn-text{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:700;
+    color:#000000 !important;
+    font-size:14px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    text-decoration:none;
+  }
+
+  .bt-mail-foot{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:400;
+    color:rgba(239,239,228,.5);
+    font-size:12px;
+    line-height:1.6;
+  }
+  .bt-mail-foot a{ color:rgba(239,239,228,.68); text-decoration:underline; }
+  a.bt-mail-cta{ display:block; }
+
+  @media only screen and (max-width:600px){
+    .bt-mail-wrap{ width:100% !important; }
+    .bt-mail-pad{ padding-left:24px !important; padding-right:24px !important; }
+    .bt-mail-h1{ font-size:25px !important; }
+    .bt-mail-h2{ font-size:18.5px !important; }
+    .bt-mail-greet{ font-size:19px !important; }
+    .bt-mail-body, .bt-mail-kicker, .bt-mail-req-text{ font-size:15px !important; }
+    .bt-mail-h1-logo{ width:96px !important; height:14.1px !important; }
+    .bt-mail-mast-logo{ width:128px !important; height:18.75px !important; }
+    .bt-mail-mast-logo-cell, .bt-mail-mast-pill-cell{ display:block !important; width:100% !important; text-align:left !important; }
+    .bt-mail-mast-pill-cell{ margin-top:14px; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#000000;">
+  <div class="bt-mail-preheader">Convocatoria BecaTech+ 2027 ya está abierta — 95% de tu carrera cubierto. Inscríbete antes del 1 de noviembre.</div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#000000;">
+    <tr>
+      <td align="center" style="padding:28px 16px;">
+
+        <!--[if mso]>
+        <table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td>
+        <![endif]-->
+        <table role="presentation" class="bt-mail-wrap bt-mail-card" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;border-radius:18px;overflow:hidden;">
+
+          <!-- Masthead: logo + pill -->
+          <tr>
+            <td class="bt-mail-pad" style="padding:30px 40px 0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="bt-mail-mast-logo-cell" align="left" valign="middle">
+                    <img class="bt-mail-mast-logo" src="https://raw.githubusercontent.com/VelezReyes/static-mail/refs/heads/main/beca-tech/reach%20base%20convocatoria%202027/becatech-logo-negativo.png" width="165" height="24.2" alt="BecaTech+" style="display:block;width:165px;height:24.2px;margin:0;">
+                  </td>
+                  <td class="bt-mail-mast-pill-cell" align="right" valign="middle">
+                    <span class="bt-mail-pill"><span class="bt-mail-pill-dot"></span>Convocatoria 2027</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Greeting + kicker -->
+          <tr>
+            <td class="bt-mail-pad" style="padding:26px 40px 0 40px;">
+              <p class="bt-mail-greet" style="margin:0 0 10px 0;">Hola *|FNAME|*,</p>
+              <p class="bt-mail-kicker" style="margin:0;">Una oportunidad puede abrirte un camino que todavía no imaginas.</p>
+            </td>
+          </tr>
+
+          <!-- Headline -->
+          <tr>
+            <td class="bt-mail-pad" style="padding:18px 40px 0 40px;">
+              <h1 class="bt-mail-h1" style="margin:0;">¡Ya está abierta la convocatoria<br>
+                <img class="bt-mail-h1-logo" src="https://raw.githubusercontent.com/VelezReyes/static-mail/refs/heads/main/beca-tech/reach%20base%20convocatoria%202027/becatech-logo-negativo.png" width="150" height="22" alt="BecaTech+" style="display:inline-block;width:150px;height:22px;vertical-align:middle;margin:0 4px -4px 0;">
+                <span class="bt-mail-h1-outline">2027</span>!</h1>
+            </td>
+          </tr>
+
+          <!-- Intro to requirements -->
+          <tr>
+            <td class="bt-mail-pad" style="padding:18px 40px 0 40px;">
+              <p class="bt-mail-body" style="margin:0;">Si aún no has iniciado estudios superiores y cumples con estos requisitos, esta puede ser tu oportunidad:</p>
+            </td>
+          </tr>
+
+          <!-- Requirements card -->
+          <tr>
+            <td class="bt-mail-pad" style="padding:18px 40px 0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="bt-mail-req-card">
+                <tr>
+                  <td class="bt-mail-req-cell">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                      <td width="22" valign="middle"><span class="bt-mail-check">&#10003;</span></td>
+                      <td class="bt-mail-req-text" valign="middle">Tienes nacionalidad colombiana.</td>
+                    </tr></table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="bt-mail-req-cell">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                      <td width="22" valign="middle"><span class="bt-mail-check">&#10003;</span></td>
+                      <td class="bt-mail-req-text" valign="middle">Te graduaste en 2025 o te gradúas en 2026.</td>
+                    </tr></table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="bt-mail-req-cell" style="border-bottom:none;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                      <td width="22" valign="middle"><span class="bt-mail-check">&#10003;</span></td>
+                      <td class="bt-mail-req-text" valign="middle">Tienes clasificación A, B o C en Sisbén/RUI (con certificado válido).</td>
+                    </tr></table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Qué incluye -->
+          <tr>
+            <td class="bt-mail-pad" style="padding:28px 40px 0 40px;">
+              <p class="bt-mail-eyebrow" style="margin:0 0 8px 0;">Beneficios</p>
+              <h2 class="bt-mail-h2" style="margin:0 0 10px 0;">¿Qué incluye?</h2>
+              <p class="bt-mail-body" style="margin:0;">BecaTech+ cubre el <strong style="color:#f3ff00;">95&nbsp;%</strong> de tu carrera en Ingeniería de Sistemas o Ciencia de Datos en una universidad top de Colombia. También incluye computador, apoyo económico, clases de inglés y mentores durante toda tu carrera.</p>
+            </td>
+          </tr>
+
+          <!-- CTA button (bulletproof table/td pattern) -->
+          <tr>
+            <td class="bt-mail-pad" style="padding:30px 40px 30px 40px;" align="left">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" bgcolor="#f3ff00" style="border-radius:4px;">
+                    <a href="https://velezreyesmas.com/proyectos/becas-tech/colombia/" target="_blank" class="bt-mail-cta bt-mail-btn-text" style="display:block;padding:16px 30px;border-radius:4px;">Inscríbete hasta el 1 de noviembre de 2026 &nbsp;&rarr;</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Photo with bottom fade -->
+          <tr>
+            <td style="padding:0;">
+              <div style="position:relative;line-height:0;font-size:0;background:#000000;">
+                <img src="https://raw.githubusercontent.com/VelezReyes/static-mail/refs/heads/main/beca-tech/reach%20base%20convocatoria%202027/image_2.png"
+                     alt="Estudiantes becados BecaTech+"
+                     width="600" height="335"
+                     style="display:block;width:100%;max-width:600px;height:auto;background:#000000;">
+                <!--[if !mso]><!-->
+                <div style="position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.6) 45%, #000000 100%);"></div>
+                <!--<![endif]-->
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="bt-mail-pad" style="padding:24px 40px 32px 40px;background:#000000;" align="left">
+              <img src="https://raw.githubusercontent.com/VelezReyes/static-mail/refs/heads/main/beca-tech/reach%20base%20convocatoria%202027/pvr_logo_negative_main_version.png" width="155" height="27.2" alt="VélezReyes+" style="display:block;width:155px;height:27.2px;margin:0 0 12px 0;">
+              <p class="bt-mail-foot" style="margin:0;">© 2026 VélezReyes+ · BecaTech+</p>
+            </td>
+          </tr>
+
+        </table>
+        <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

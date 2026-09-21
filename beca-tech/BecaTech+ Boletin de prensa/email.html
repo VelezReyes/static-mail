@@ -1,0 +1,421 @@
+<!--
+  BECATECH+ 2027 · BOLETÍN DE PRENSA (email para envío — Mailchimp u otro ESP)
+  ============================================================
+  Por qué se rehízo este archivo: el original venía de un builder de
+  arrastrar-y-soltar (de ahí clases como "ers-fs-197" y "layout-3") y
+  no tenía nada de la identidad de marca del proyecto: tipografía Arial
+  genérica, cada sección metida en su propia tarjeta blanca separada
+  (mucho ruido visual), y los links en el azul por defecto del builder
+  (#1a62ff), que no es un color de la marca. Este rehecho usa la misma
+  base tipográfica/cromática que el resto de las piezas de BecaTech+
+  (BookmanJFPro + Instrument Sans, tinta #121210, crema #efefe4,
+  morado #a62bff como acento editorial, amarillo #f3ff00 solo para la
+  acción/CTA), en un layout más plano y legible — apropiado para un
+  boletín de prensa, no una pieza promocional.
+
+  TAMBIÉN CORREGÍ UNA DUPLICACIÓN DE CONTENIDO: el original tenía dos
+  secciones completas con exactamente los mismos 3 requisitos (Sisbén/
+  RUI, año de graduación, Pruebas Saber 11) — una vez como "Requisitos
+  de inscripción para los estudiantes" y otra vez como "¿Quiénes
+  pueden aplicar?", literalmente el mismo texto repetido. Las uní en
+  una sola sección ("¿Quiénes pueden aplicar?"). Si esa repetición era
+  intencional por alguna razón (por ejemplo, para que quedara dos veces
+  en el .txt plano que genera el builder), avísame y la separo de
+  nuevo — pero como HTML/email tal como estaba, se veía a como un
+  error de copy-paste, no como diseño.
+
+  Las 3 imágenes se quedaron exactamente donde estaban (images/ al
+  lado de este archivo, mismos nombres de archivo) — no tuve que tocar
+  ni resubir nada de eso.
+
+  Sigue siendo tablas + estilos en línea por debajo, sin JS ni
+  animaciones — mismo criterio "simple pero de marca" que el resto de
+  los mailings de esta campaña.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>BecaTech+ 2027 — Boletín de prensa</title>
+<!--[if mso]>
+<noscript>
+<xml>
+<o:OfficeDocumentSettings>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+</noscript>
+<![endif]-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  @font-face{
+    font-family:'BT4BookmanJFPro';
+    src:url('https://cdn.jsdelivr.net/gh/VelezReyes/notion-content@main/BookmanJFPro-Regular.woff2') format('woff2');
+    font-weight:400 800;
+    font-style:normal;
+    font-display:swap;
+  }
+  body, table, td, a{ -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+  table, td{ mso-table-lspace:0pt; mso-table-rspace:0pt; }
+  img{ -ms-interpolation-mode:bicubic; border:0; outline:none; text-decoration:none; }
+  body{ margin:0; padding:0; width:100% !important; height:100% !important; background:#efefe4; }
+  .bt-pr-preheader{ display:none !important; visibility:hidden; mso-hide:all; font-size:1px; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden; }
+
+  .bt-pr-eyebrow{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#a62bff;
+  }
+  .bt-pr-dateline{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:600;
+    font-size:11.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(18,18,15,.5);
+  }
+  .bt-pr-h1{
+    font-family:'BT4BookmanJFPro',Georgia,'Times New Roman',serif;
+    font-weight:800;
+    color:#121210;
+    font-size:27px;
+    line-height:1.22;
+    letter-spacing:.1px;
+  }
+  .bt-pr-h2{
+    font-family:'BT4BookmanJFPro',Georgia,'Times New Roman',serif;
+    font-weight:800;
+    color:#a62bff;
+    font-size:19px;
+    line-height:1.3;
+  }
+  .bt-pr-body{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:400;
+    color:rgba(18,18,15,.86);
+    font-size:15.5px;
+    line-height:1.62;
+  }
+  .bt-pr-body strong{ color:#121210; font-weight:700; }
+  .bt-pr-lede{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:400;
+    color:rgba(18,18,15,.86);
+    font-size:16px;
+    line-height:1.6;
+  }
+  .bt-pr-lede strong{ color:#121210; font-weight:700; }
+
+  .bt-pr-glance{
+    background:#ffffff;
+    border:1px solid rgba(18,18,15,.08);
+    border-radius:14px;
+  }
+  .bt-pr-glance-row td{ padding:12px 18px; }
+  .bt-pr-dot{
+    display:inline-block;width:6px;height:6px;margin-top:8px;
+    background:#a62bff;border-radius:1px;
+  }
+  .bt-pr-glance-text{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:500;color:#121210;font-size:14.5px;line-height:1.5;
+    padding-left:12px;
+  }
+
+  .bt-pr-bullet-text{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:400;color:rgba(18,18,15,.86);font-size:15.5px;line-height:1.55;
+    padding-left:12px;
+  }
+  .bt-pr-bullet-text strong{ color:#121210; font-weight:700; }
+  .bt-pr-dot2{
+    display:inline-block;width:6px;height:6px;margin-top:9px;
+    background:#a62bff;border-radius:1px;
+  }
+
+  .bt-pr-check{
+    display:inline-block;width:20px;height:20px;line-height:20px;
+    border-radius:50%;background:rgba(39,207,119,.16);color:#199a56;
+    font-family:Arial,sans-serif;font-weight:800;font-size:11px;text-align:center;
+  }
+
+  .bt-pr-btn-text{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:700;
+    color:#121210 !important;
+    font-size:14px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    text-decoration:none;
+  }
+
+  .bt-pr-link{ color:#a62bff !important; font-weight:600; text-decoration:underline; }
+  .bt-pr-foot-link{ color:#f3ff00 !important; font-weight:600; text-decoration:underline; }
+
+  .bt-pr-foot-label{
+    font-family:'BT4BookmanJFPro',Georgia,serif;
+    font-weight:800;
+    color:#efefe4;
+    font-size:16px;
+    line-height:1.3;
+  }
+  .bt-pr-foot-text{
+    font-family:'Instrument Sans',Arial,Helvetica,sans-serif;
+    font-weight:400;
+    color:rgba(239,239,228,.82);
+    font-size:14.5px;
+    line-height:1.55;
+  }
+
+  @media only screen and (max-width:600px){
+    .bt-pr-wrap{ width:100% !important; }
+    .bt-pr-pad{ padding-left:22px !important; padding-right:22px !important; }
+    .bt-pr-h1{ font-size:23px !important; }
+    .bt-pr-h2{ font-size:17.5px !important; }
+    .bt-pr-body, .bt-pr-lede, .bt-pr-bullet-text{ font-size:15px !important; }
+  }
+  @media only screen and (max-width:370px){
+    .bt-pr-mast-logo-cell, .bt-pr-mast-date-cell{ display:block !important; width:100% !important; text-align:left !important; }
+    .bt-pr-mast-date-cell{ margin-top:12px; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#efefe4;">
+  <div class="bt-pr-preheader">BecaTech+ abre su convocatoria 2027 en Colombia — comunicado de prensa de VélezReyes+. Inscripciones hasta el 1 de noviembre de 2026.</div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#efefe4;">
+    <tr>
+      <td align="center" style="padding:28px 16px;">
+
+        <!--[if mso]>
+        <table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td>
+        <![endif]-->
+        <table role="presentation" class="bt-pr-wrap" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#efefe4;">
+
+          <!-- Masthead: logo VélezReyes+ + eyebrow/dateline -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:30px 24px 0 24px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="bt-pr-mast-logo-cell" align="left" valign="middle">
+                    <img src="images/6ffb13c7694271498b256b85e64285bd.png" width="140" height="22.4" alt="VélezReyes+" style="display:block;width:140px;height:22.4px;">
+                  </td>
+                  <td class="bt-pr-mast-date-cell" align="right" valign="middle">
+                    <p class="bt-pr-eyebrow" style="margin:0 0 4px 0;">Boletín de prensa</p>
+                    <p class="bt-pr-dateline" style="margin:0;">Colombia · 21 de septiembre de 2026</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Hero photo -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:22px 24px 0 24px;">
+              <img src="images/042a91eebac412152bf93ce9feae3c06.png" width="552" height="321" alt="Becarios de BecaTech+" style="display:block;width:100%;max-width:552px;height:auto;border-radius:14px;background:#ffffff;">
+            </td>
+          </tr>
+
+          <!-- BecaTech+ logo -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:24px 24px 0 24px;">
+              <img src="images/8694618c932f149dbb7e879424c9632f.png" width="170" height="25.5" alt="BecaTech+" style="display:block;width:170px;height:25.5px;">
+            </td>
+          </tr>
+
+          <!-- Headline -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:14px 24px 0 24px;">
+              <h1 class="bt-pr-h1" style="margin:0;">abre su convocatoria 2027 para estudiar Ingeniería de Sistemas o Ciencia de Datos en Colombia</h1>
+            </td>
+          </tr>
+
+          <!-- At-a-glance summary -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:20px 24px 0 24px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="bt-pr-glance">
+                <tr class="bt-pr-glance-row">
+                  <td>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                      <td width="12" valign="top"><span class="bt-pr-dot"></span></td>
+                      <td class="bt-pr-glance-text" valign="top">La convocatoria está dirigida a jóvenes colombianos de todo el país interesados en iniciar una carrera profesional en tecnología.</td>
+                    </tr></table>
+                  </td>
+                </tr>
+                <tr class="bt-pr-glance-row">
+                  <td>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                      <td width="12" valign="top"><span class="bt-pr-dot"></span></td>
+                      <td class="bt-pr-glance-text" valign="top">La beca cubre el 95&nbsp;% de la carrera e incluye computador, apoyo para gastos, clases de inglés y mentoría durante toda la formación.</td>
+                    </tr></table>
+                  </td>
+                </tr>
+                <tr class="bt-pr-glance-row">
+                  <td>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                      <td width="12" valign="top"><span class="bt-pr-dot"></span></td>
+                      <td class="bt-pr-glance-text" valign="top">Los seleccionados podrán estudiar en la Universidad de los Andes, EAFIT, EIA, ICESI o la Universidad del Norte.</td>
+                    </tr></table>
+                  </td>
+                </tr>
+                <tr class="bt-pr-glance-row">
+                  <td>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                      <td width="12" valign="top"><span class="bt-pr-dot"></span></td>
+                      <td class="bt-pr-glance-text" valign="top">Las inscripciones estarán abiertas hasta el 1 de noviembre de 2026.</td>
+                    </tr></table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Body copy -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:24px 24px 0 24px;">
+              <p class="bt-pr-lede" style="margin:0 0 16px 0;"><strong>21 de septiembre de 2026, Colombia.</strong> La plataforma filantrópica <strong>VélezReyes+</strong> anuncia la apertura de la convocatoria 2027 de <strong>BecaTech+</strong>, un programa que brinda oportunidades de formación profesional en tecnología a jóvenes colombianos. Los seleccionados podrán estudiar <strong>Ingeniería de Sistemas o Ciencia de Datos</strong> en universidades aliadas en Colombia.</p>
+              <p class="bt-pr-body" style="margin:0 0 16px 0;"><strong>Con tres cohortes en Colombia y dos en Perú, BecaTech+ cuenta actualmente con 221 becarios.</strong> Esta nueva convocatoria continúa el trabajo del programa para ampliar el acceso a oportunidades de formación en tecnología.</p>
+              <p class="bt-pr-body" style="margin:0 0 16px 0;">Además de la cobertura del <strong>95&nbsp;% de la carrera</strong>, el programa ofrece computador, apoyo para gastos, clases de inglés y mentoría durante toda la formación, con el propósito de acompañar a los estudiantes durante su trayectoria universitaria y acercarlos a diferentes oportunidades del mundo profesional.</p>
+              <p class="bt-pr-body" style="margin:0 0 16px 0;">Los jóvenes seleccionados podrán estudiar en una de las cinco universidades participantes: <strong>Universidad de los Andes, Universidad EAFIT, Universidad EIA, Universidad ICESI y Universidad del Norte</strong>. El proceso de admisión a la universidad debe realizarse al mismo tiempo que el registro en BecaTech+.</p>
+              <p class="bt-pr-body" style="margin:0 0 16px 0;">La convocatoria está dirigida a jóvenes colombianos de todo el país que <strong>cuenten con Sisbén o RUI A, B o C, se hayan graduado del colegio en 2025 o se gradúen en 2026, y hayan presentado las Pruebas Saber 11</strong>. No es necesario contar todavía con los resultados para realizar la inscripción.</p>
+              <p class="bt-pr-body" style="margin:0;">A través de mentorías y conexiones con profesionales, emprendedores y otros actores del ecosistema tecnológico, BecaTech+ busca acompañar a los estudiantes durante su formación y ampliar su conocimiento sobre las diferentes posibilidades profesionales en este campo.</p>
+            </td>
+          </tr>
+
+          <!-- Características destacadas -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:30px 24px 0 24px;">
+              <h2 class="bt-pr-h2" style="margin:0 0 14px 0;">Características destacadas de BecaTech+</h2>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td style="padding:0 0 10px 0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td width="12" valign="top" style="padding-top:2px;"><span class="bt-pr-dot2"></span></td>
+                    <td class="bt-pr-bullet-text" valign="top"><strong>Cobertura del 95&nbsp;% de la carrera.</strong></td>
+                  </tr></table>
+                </td></tr>
+                <tr><td style="padding:0 0 10px 0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td width="12" valign="top" style="padding-top:2px;"><span class="bt-pr-dot2"></span></td>
+                    <td class="bt-pr-bullet-text" valign="top"><strong>Computador</strong> para acompañar el proceso académico.</td>
+                  </tr></table>
+                </td></tr>
+                <tr><td style="padding:0 0 10px 0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td width="12" valign="top" style="padding-top:2px;"><span class="bt-pr-dot2"></span></td>
+                    <td class="bt-pr-bullet-text" valign="top"><strong>Apoyo para gastos</strong> durante la trayectoria universitaria.</td>
+                  </tr></table>
+                </td></tr>
+                <tr><td style="padding:0 0 10px 0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td width="12" valign="top" style="padding-top:2px;"><span class="bt-pr-dot2"></span></td>
+                    <td class="bt-pr-bullet-text" valign="top"><strong>Clases de inglés</strong> para fortalecer sus oportunidades académicas y profesionales.</td>
+                  </tr></table>
+                </td></tr>
+                <tr><td style="padding:0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td width="12" valign="top" style="padding-top:2px;"><span class="bt-pr-dot2"></span></td>
+                    <td class="bt-pr-bullet-text" valign="top"><strong>Mentoría durante toda la carrera</strong>, con acompañamiento y conexión con personas que pueden aportar a su desarrollo.</td>
+                  </tr></table>
+                </td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ¿Quiénes pueden aplicar? (sección unificada — antes duplicada) -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:28px 24px 0 24px;">
+              <h2 class="bt-pr-h2" style="margin:0 0 10px 0;">¿Quiénes pueden aplicar?</h2>
+              <p class="bt-pr-body" style="margin:0 0 14px 0;">La convocatoria está dirigida a jóvenes colombianos de todo el país que cumplan con estos criterios:</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td style="padding:0 0 10px 0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td width="24" valign="top"><span class="bt-pr-check">&#10003;</span></td>
+                    <td class="bt-pr-bullet-text" valign="top">Contar con Sisbén o RUI A, B o C.</td>
+                  </tr></table>
+                </td></tr>
+                <tr><td style="padding:0 0 10px 0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td width="24" valign="top"><span class="bt-pr-check">&#10003;</span></td>
+                    <td class="bt-pr-bullet-text" valign="top">Graduarse del colegio en 2026 o haberse graduado en 2025.</td>
+                  </tr></table>
+                </td></tr>
+                <tr><td style="padding:0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                    <td width="24" valign="top"><span class="bt-pr-check">&#10003;</span></td>
+                    <td class="bt-pr-bullet-text" valign="top">Haber presentado las Pruebas Saber 11. No es necesario contar todavía con los resultados para realizar la inscripción.</td>
+                  </tr></table>
+                </td></tr>
+              </table>
+              <p class="bt-pr-body" style="margin:14px 0 0 0;">Las inscripciones estarán abiertas hasta <strong>el 1 de noviembre de 2026</strong>.</p>
+            </td>
+          </tr>
+
+          <!-- CTA -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:28px 24px 0 24px;">
+              <p class="bt-pr-body" style="margin:0 0 16px 0;"><strong style="color:#121210;">Las inscripciones para BecaTech+ 2027 estarán abiertas en Colombia hasta el 1 de noviembre de 2026.</strong> Más información y formulario de inscripción:</p>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" bgcolor="#f3ff00" style="border-radius:4px;">
+                    <a href="https://velezreyesmas.com/proyectos/beca-tech/colombia/" target="_blank" rel="noopener nofollow" class="bt-pr-btn-text" style="display:block;padding:15px 26px;border-radius:4px;">Ver convocatoria y formulario &nbsp;&rarr;</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Acerca de VélezReyes+ -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:30px 24px 0 24px;">
+              <h2 class="bt-pr-h2" style="margin:0 0 10px 0;">Acerca de VélezReyes+</h2>
+              <p class="bt-pr-body" style="margin:0;"><strong>VélezReyes+</strong> es una plataforma de filantropía de <strong>David Vélez y su esposa, Mariel Reyes</strong>, que impulsa iniciativas orientadas a ampliar el acceso a oportunidades en América Latina.</p>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td class="bt-pr-pad" style="padding:26px 24px 0 24px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td height="1" style="height:1px;font-size:0;line-height:0;background:rgba(18,18,15,.14);">&nbsp;</td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr><td style="height:26px;font-size:0;line-height:0;">&nbsp;</td></tr>
+
+          <!-- Footer: contacto + material de prensa -->
+          <tr>
+            <td style="background:#121210;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td class="bt-pr-pad" style="padding:26px 24px;">
+                    <p class="bt-pr-foot-label" style="margin:0 0 8px 0;">Información de contacto</p>
+                    <p class="bt-pr-foot-text" style="margin:0 0 20px 0;">Yineth Rentería · <a href="mailto:yineth@velezreyesmas.com" class="bt-pr-foot-link">yineth@velezreyesmas.com</a></p>
+                    <p class="bt-pr-foot-label" style="margin:0 0 8px 0;">Material para medios</p>
+                    <p class="bt-pr-foot-text" style="margin:0;">Descarga <a href="https://drive.google.com/drive/folders/1s_N6dQtjfoJ_zK1ICIqxVllPIcgubVeV?usp=sharing" target="_blank" rel="noopener nofollow" class="bt-pr-foot-link">aquí</a> la pieza general de BecaTech+ con el código QR para compartir la convocatoria.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
